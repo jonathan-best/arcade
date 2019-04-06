@@ -1,0 +1,28 @@
+.acd-invader{
+  display: inline-block;
+  position: absolute;
+  .acd-invader-row {
+    display: flex;
+    height: 5px;
+    span {
+      width: 5px;
+      height: 5px;
+      display: inline-block;
+      &.acd-invader-square--blue {
+        background: #00EDFC;
+      }
+      &.acd-invader-square--orange {
+        background: #FC8900;
+      }
+      &.acd-invader-square--pink {
+        background: #FF33F6;
+      }
+      &.acd-invader-square--yellow {
+        background: #ccff00;
+      }
+      &.acd-invader-square--green {
+        background: #00FF00;
+      }
+    }
+  }
+}

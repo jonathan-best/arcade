@@ -1,0 +1,67 @@
+.acd-joystick {
+  position: absolute;
+  z-index: 1;
+  margin-left: 40px;
+  margin-top: 32px;
+}
+.acd-joystick__origin {
+  transition: transform 0.1s linear;
+  transform-origin: bottom;
+  transform-style: preserve-3D;
+}
+.acd-joystick__stalk {
+  height: 30px;
+  width: 10px;
+  display: block;
+  background: #606060;
+  border-left: 1px solid #505050;
+  border-right: 1px solid #505050;
+  left: 10px;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 5px -4px 5px 0px rgba(0,0,0,0.2);
+}
+.acd-joystick:after {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 15px;
+  background: black;
+  content: '';
+  z-index: -1;
+  top: 45px;
+  left: 0px;
+  transform: rotateX(-70deg);
+}
+.acd-joystick__ball {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  display: block;
+  background: radial-gradient(#E80000 , #A80000 );
+  z-index: 1;
+  top: 3px;
+  position: relative;
+  box-shadow: 5px -4px 5px 0px rgba(0,0,0,0.2);
+}
+.acd-joystick--UP {
+  transform: rotateX(20deg);
+  .acd-joystick__ball{
+    box-shadow: 5px -6px 5px 0px rgba(0,0,0,0.2);
+  }
+  .acd-joystick__stalk{
+    box-shadow: 5px -2px 5px 0px rgba(0,0,0,0.2), 5px -28px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+}
+.acd-joystick--DOWN {
+  transform: rotateX(-20deg);
+}
+.acd-joystick--LEFT {
+  transform: rotate(-20deg);
+  .acd-joystick__stalk, .acd-joystick__ball{
+    box-shadow: -5px -4px 5px 0px rgba(0,0,0,0.2);
+  }
+}
+.acd-joystick--RIGHT {
+  transform: rotate(20deg);
+}

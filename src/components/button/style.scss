@@ -1,0 +1,48 @@
+.acd-button {
+  position: absolute;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 40px;
+  top: 40%;
+  display: block;
+  height: 50px;
+  border-radius: 25px;
+  background-color: rgba(160, 160, 160, 0.5);
+  box-shadow: 2px -8px 10px 0px rgba(0, 0, 0, 0.2);
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 48px;
+    background-color: red;
+    content: '';
+  }
+  &:nth-child(1) {
+    left: 330px;
+    background-color: darken(red, 12%);
+    &:before {
+      background: red;
+    }
+  }
+  &:nth-child(2) {
+    left: 380px;
+    background-color: darken(green, 12%);
+    &:before {
+      background: green;
+    }
+  }
+  &:nth-child(3) {
+    left: 430px;
+    background-color: darken(blue, 12%);
+    &:before {
+      background: blue;
+    }
+  }
+  &--DOWN {
+    &:before {
+      height: 45px;
+    }
+  }
+}
