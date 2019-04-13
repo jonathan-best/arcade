@@ -7,8 +7,7 @@ let Bullet = new Phaser.Class({
   initialize:
 
   function Bullet (scene) {
-    let bullet = Phaser.Physics.Arcade.Sprite.call(this, scene, 0, 0, 'bullet');
-
+    Phaser.Physics.Arcade.Sprite.call(this, scene, 0, 0, 'bullet');
     this.speed = 0;
     this.born = 0;
   },

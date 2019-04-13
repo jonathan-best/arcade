@@ -15,7 +15,7 @@ export default class PostScene extends Phaser.Scene {
 
   update () {
     if (this.cursors.space.isDown) {
-      this.scene.start('Game');
+      // this.scene.start('Game');
     }
   }
 };
