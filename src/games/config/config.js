@@ -1,7 +1,8 @@
 import Phaser from 'phaser';
 import BootScene from '../scenes/bootScene';
 import GameScene from '../scenes/gameScene';
-import PostScene from '../scenes/postScene';
+import WinnerScene from '../scenes/winnerScene';
+import GameOverScene from '../scenes/gameOverScene';
 
 export default {
   type: Phaser.AUTO,
@@ -11,12 +12,13 @@ export default {
   physics: {
     default: 'arcade',
   },
-  scene: [BootScene, GameScene, PostScene],
+  scene: [BootScene, GameScene, WinnerScene, GameOverScene],
   extend: {
     player: null,
     cursors: null,
     bullets: null,
     lastFired: 0,
+    lastAlienFired: 0,
     score: 0,
   }
 };

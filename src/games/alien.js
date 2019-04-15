@@ -20,7 +20,7 @@ const Alien = new Phaser.Class({
     this.setPosition(this.pathVector.x, this.pathVector.y);
   },
 
-  die: function(player){
+  die: function(){
     this.anims.play('explode', true);
     this.on('animationcomplete', () => {
       this.disableBody(true, true);
