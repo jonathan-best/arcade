@@ -15,7 +15,7 @@ let Bullet = new Phaser.Class({
   fire: function (player) {
     const {x, y, height} = player;
 
-    this.setPosition(x, y - height);
+    this.setPosition(x, y);
     this.speed = Phaser.Math.GetSpeed(-300, 1);
     this.born = 0;
   },
