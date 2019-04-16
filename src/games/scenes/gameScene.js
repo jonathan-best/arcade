@@ -16,8 +16,8 @@ export default class GameScene extends Phaser.Scene {
     this.load.image('enemyBullet', '/assets/enemy-bullet.png');
     this.load.image('invader', '/assets/invader.png');
     this.load.spritesheet('explode',
-        'assets/explode.png',
-        { frameWidth: 128, frameHeight: 128 }
+      'assets/explode.png',
+      { frameWidth: 128, frameHeight: 128 }
     );
   }
 
@@ -68,6 +68,7 @@ export default class GameScene extends Phaser.Scene {
     // Add the hit detection
     this.physics.add.overlap(this.bullets, this.aliens, this.enemyHit, null, this);
     this.physics.add.overlap(this.alienBullets, this.player, this.playerHit, null, this);
+    this.physics.add.overlap(this.aliens, this.player, this.collision, null, this);
   }
 
   update (time) {
@@ -124,6 +125,11 @@ export default class GameScene extends Phaser.Scene {
     player.die();
     bullet.destroy(true, true);
     this.gameOver = true;
+  }
+
+  collision (player, alien) {
+    player.die();
+    alien.die();
   }
 
   enemyHit (bullet, player) {
