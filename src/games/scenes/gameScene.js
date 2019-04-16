@@ -58,9 +58,9 @@ export default class GameScene extends Phaser.Scene {
 
     this.alienCount = 0;
 
-    for (let y = 0; y < 3; y++) {
+    for (let y = 1; y < 4; y++) {
       for (let x = 0; x < 10; x++) {
-        this.aliens.add(new Alien(this, x * 48, y * 48, 100, 100, 0.005), true);
+        this.aliens.add(new Alien(this, x * 48, y * 30, 100, 100, 0.005), true);
         this.alienCount += 1;
       }
     }
