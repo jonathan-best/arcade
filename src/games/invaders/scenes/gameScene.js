@@ -1,8 +1,8 @@
 import Phaser from 'phaser';
-import Bullet from '../bullet';
-import AlienBullet from '../alienBullet';
-import Alien from '../alien';
-import PlayerClass from '../player'
+import Bullet from '../classes/bullet';
+import AlienBullet from '../classes/alienBullet';
+import Alien from '../classes/alien';
+import PlayerClass from '../classes/player';
 
 export default class GameScene extends Phaser.Scene {
   constructor () {

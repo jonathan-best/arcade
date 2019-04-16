@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Cabinet from './cabinet';
-import Invaders from '../games/invaders'
+import Invaders from '../games/invaders';
 import './App.css';
 
 class App extends Component {
