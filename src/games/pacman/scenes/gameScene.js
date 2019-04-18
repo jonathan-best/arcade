@@ -13,13 +13,13 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create () {
-    this.map = this.make.tilemap({ key: 'map', tileWidth: 16, tileHeight: 16 });
+    this.map = this.make.tilemap({ key: 'map', tileWidth: 24, tileHeight: 24 });
     let tileset = this.map.addTilesetImage('tiles');
     let layer = this.map.createStaticLayer(0, tileset, 0, 0);
 
     this.map.setCollision([1]);
 
-    this.player = this.add.existing(new PlayerClass(this, 24, 24));
+    this.player = this.add.existing(new PlayerClass(this, 24 + 8, 24 + 8));
 
     this.physics.add.existing(this.player);
     this.physics.add.collider(this.player, layer);
