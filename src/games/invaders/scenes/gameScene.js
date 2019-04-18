@@ -10,13 +10,13 @@ export default class GameScene extends Phaser.Scene {
   }
 
   preload () {
-    this.load.image('sky', "/assets/starfield.png");
-    this.load.image('ship', "/assets/player.png");
-    this.load.image('bullet', '/assets/bullet.png');
-    this.load.image('enemyBullet', '/assets/enemy-bullet.png');
-    this.load.image('invader', '/assets/invader.png');
+    this.load.image('sky', "/assets/invaders/starfield.png");
+    this.load.image('ship', "/assets/invaders/player.png");
+    this.load.image('bullet', '/assets/invaders/bullet.png');
+    this.load.image('enemyBullet', '/assets/invaders/enemy-bullet.png');
+    this.load.image('invader', '/assets/invaders/invader.png');
     this.load.spritesheet('explode',
-      'assets/explode.png',
+      'assets/invaders/explode.png',
       { frameWidth: 128, frameHeight: 128 }
     );
   }

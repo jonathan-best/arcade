@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
+import InvadersConfig from './config/config';
 import Phaser from 'phaser';
-import Config from './config/config';
 
-class Invaders extends Component {
+class Game extends Component {
   constructor() {
     super();
     this.game = null;
   }
 
   componentDidMount () {
-    this.game = new Phaser.Game(Config);
+    this.game = new Phaser.Game(InvadersConfig);
   }
 
   render() {
@@ -19,4 +19,4 @@ class Invaders extends Component {
   }
 }
 
-export default Invaders;
+export default Game;

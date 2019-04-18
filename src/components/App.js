@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Cabinet from './cabinet';
-import Invaders from '../games/invaders';
+import Game from '../games';
 import './App.css';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Cabinet>
-          <Invaders />
+          <Game variant="invaders" />
         </Cabinet>
       </div>
     );
