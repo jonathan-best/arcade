@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Joystick from '../joystick';
 import Button from '../button';
 import Invader from '../invader';
+import Pacman from '../pacman';
 import './style.scss';
 
 class Cabinet extends Component {
@@ -26,7 +27,9 @@ class Cabinet extends Component {
           <Button keyCode={31} />
           <Button keyCode={30} />
         </div>
-        <div className="acd-front" />
+        <div className="acd-front">
+          <Pacman />
+        </div>
       </div>
     );
   }

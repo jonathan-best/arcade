@@ -11,10 +11,11 @@ class Game extends Component {
   }
 
   render() {
+    const { variant } = this.props;
     return (
       <Suspense fallback={<div />}>
-        {this.props.variant === 'invaders' && <InvadersGame />}
-        {this.props.variant === 'pacman' && <PacmanGame />}
+        {variant === 'invaders' && <InvadersGame />}
+        {variant === 'pacman' && <PacmanGame />}
       </Suspense>
     );
   }
