@@ -36,8 +36,8 @@ export default class GameScene extends Phaser.Scene {
     this.scoreText = this.add.text(20 , 10, `Score: ${this.score}`);
 
     // Set up the player
-    this.playerGroup = this.physics.add.group({ classType: PlayerClass, runChildUpdate: true });
-    this.player = this.playerGroup.get();
+    this.player = this.add.existing(new PlayerClass(this, 24, 24));
+    this.physics.add.existing(this.player);
     this.player.setCollideWorldBounds(true);
 
     // Set up the bullets
