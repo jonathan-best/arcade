@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Cabinet>
-          <Game variant="pacman" />
+          <Game variant="invaders" />
         </Cabinet>
       </div>
     );

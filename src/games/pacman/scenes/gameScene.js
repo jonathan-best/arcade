@@ -8,28 +8,36 @@ export default class GameScene extends Phaser.Scene {
 
   preload () {
     this.load.image('tiles', 'assets/pacman/tilemap.png');
-    this.load.tilemapCSV('map', 'assets/pacman/pacmap.csv');
     this.load.image('player', 'assets/pacman/player.png');
+    this.load.image('dot', 'assets/pacman/dot.png');
+    this.load.tilemapTiledJSON('map', 'assets/pacman/pacmap.json');
   }
 
   create () {
-    this.map = this.make.tilemap({ key: 'map', tileWidth: 24, tileHeight: 24 });
+    this.score = 0;
+
+    this.map = this.make.tilemap({key: 'map'});
     let tileset = this.map.addTilesetImage('tiles');
-    let layer = this.map.createStaticLayer(0, tileset, 0, 0);
+    let dotTile = this.map.addTilesetImage('dot');
 
-    this.map.setCollision([1]);
+    this.layer = this.map.createDynamicLayer('Ground Layer', tileset, 0, 0);
+    this.dotLayer = this.map.createDynamicLayer('Dot Layer', dotTile, 0, 0);
 
-    this.player = this.add.existing(new PlayerClass(this, 24 + 8, 24 + 8));
+    this.layer.setCollisionBetween(1,1);
+    this.dotLayer.setTileIndexCallback(3, this.hitCoin, this);
+    this.player = this.add.existing(new PlayerClass(this, 24 + 12, 24 + 12));
 
     this.physics.add.existing(this.player);
-    this.physics.add.collider(this.player, layer);
+    this.physics.add.collider(this.player, this.layer);
+    this.physics.add.overlap(this.player, this.dotLayer);
 
     this.cursors = this.input.keyboard.createCursorKeys();
+
+    // Start the player moving
+    this.player.moveRight();
   }
 
   update (time) {
-    this.player.body.setVelocity(0);
-
     if (this.cursors.down.isDown) {
       this.player.moveDown();
     } else if (this.cursors.up.isDown) {
@@ -39,5 +47,12 @@ export default class GameScene extends Phaser.Scene {
     } else if (this.cursors.right.isDown) {
       this.player.moveRight();
     }
+  }
+
+  hitCoin (sprite, tile) {
+    this.dotLayer.removeTileAt(tile.x, tile.y);
+    this.score += 1;
+
+    return false;
   }
 };
