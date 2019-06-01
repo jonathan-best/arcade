@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "1f2cfc3d0c580c9b30a9",
-    "url": "/arcade/static/js/runtime~main.c29a436f.js"
+    "revision": "910edc93577c875fa00b",
+    "url": "/arcade/static/js/runtime~main.ada60133.js"
   },
   {
     "revision": "66c65edfb40c94434066",
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/arcade/static/js/5.068eead5.chunk.js"
   },
   {
-    "revision": "82c54132854a8dc9851a",
-    "url": "/arcade/static/js/4.019ba71c.chunk.js"
+    "revision": "dc93c6fdac47ab28a27f",
+    "url": "/arcade/static/js/4.f97a9125.chunk.js"
   },
   {
     "revision": "dde0da1739cb92844266",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/arcade/static/css/main.0de70eb9.chunk.css"
   },
   {
-    "revision": "b9a37b0c4fcdff361ddced94b820779b",
+    "revision": "2055ef36a1e75f8faf41ac4945623d7a",
     "url": "/arcade/index.html"
   }
 ];
