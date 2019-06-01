@@ -113,18 +113,31 @@ export default class GameScene extends Phaser.Scene {
   }
 
   update (time) {
+    // Get the tiles around the player
     this.directions.right = this.layer.getTileAtWorldXY(this.player.x + 16, this.player.y, true);
     this.directions.left = this.layer.getTileAtWorldXY(this.player.x - 16, this.player.y, true);
     this.directions.up = this.layer.getTileAtWorldXY(this.player.x, this.player.y - 16, true);
     this.directions.down = this.layer.getTileAtWorldXY(this.player.x, this.player.y + 16, true);
 
-    if (this.cursors.down.isDown && this.canTurn('down')) {
+    // Capture the users intended direction
+    if (this.cursors.down.isDown) {
+      this.nextDirection = 'down';
+    } else if (this.cursors.up.isDown) {
+      this.nextDirection = 'up';
+    } else if (this.cursors.left.isDown) {
+      this.nextDirection = 'left';
+    } else if (this.cursors.right.isDown) {
+      this.nextDirection = 'right';
+    }
+
+    // Wait until its possible to take the direction and move
+    if (this.nextDirection === 'down' && this.canTurn('down')) {
       this.player.moveDown();
-    } else if (this.cursors.up.isDown && this.canTurn('up')) {
+    } else if (this.nextDirection === 'up' && this.canTurn('up')) {
       this.player.moveUp();
-    } else if (this.cursors.left.isDown && this.canTurn('left')) {
+    } else if (this.nextDirection === 'left' && this.canTurn('left')) {
       this.player.moveLeft();
-    } else if (this.cursors.right.isDown && this.canTurn('right')) {
+    } else if (this.nextDirection === 'right' && this.canTurn('right')) {
       this.player.moveRight();
     }
 
