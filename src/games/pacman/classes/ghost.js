@@ -56,6 +56,8 @@ const Ghost = new Phaser.Class({
       case 'right' :
         this.moveRight();
         break;
+      default :
+        break;
     }
   },
 
@@ -64,10 +66,10 @@ const Ghost = new Phaser.Class({
     const directionCount = objectKeys.length;
     const directionKey = Math.floor(Math.random() * directionCount);
     
-    if(objectKeys[directionKey] === 'right' && this.currentDirection === 'left' || 
-      objectKeys[directionKey] === 'left' && this.currentDirection === 'right' ||
-      objectKeys[directionKey] === 'up' && this.currentDirection === 'down' ||
-      objectKeys[directionKey] === 'down' && this.currentDirection === 'up') {
+    if((objectKeys[directionKey] === 'right' && this.currentDirection === 'left') || 
+      (objectKeys[directionKey] === 'left' && this.currentDirection === 'right') ||
+      (objectKeys[directionKey] === 'up' && this.currentDirection === 'down') ||
+      (objectKeys[directionKey] === 'down' && this.currentDirection === 'up')) {
       return this.currentDirection;
     }
     

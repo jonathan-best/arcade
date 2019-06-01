@@ -24,11 +24,11 @@ class Invader extends PureComponent {
       <div className="acd-invader" onClick={this.changeGame}>
         {
           matrix.map((row, i) => {
-            const squares = row.map((row) => {
-              return row ? <span className={`acd-invader-square--${this.props.variant}`} /> :
-                <span className="acd-invader-square--clear" />
+            const squares = row.map((row, y) => {
+              return row ? <span className={`acd-invader-square--${this.props.variant}`} key={`acd-invader-square-${i}-${y}`} /> :
+                <span className="acd-invader-square--clear" key={`acd-invader-square-${i}-${y}`} />
             });
-            return <span className="acd-invader-row">{squares}</span>
+            return <span className="acd-invader-row" key={`acd-invader-row-${i}`}>{squares}</span>
           })
         }
       </div>
