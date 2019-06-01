@@ -14,9 +14,14 @@ const matrix = [
 ]
 
 class Invader extends PureComponent {
+
+  changeGame = () => {
+    this.props.changeGame('invaders')
+  }
+
   render() {
     return (
-      <div className="acd-invader">
+      <div className="acd-invader" onClick={this.changeGame}>
         {
           matrix.map((row, i) => {
             const squares = row.map((row) => {

@@ -6,15 +6,17 @@ const Ghost = new Phaser.Class({
 
   initialize:
 
-  function Ghost (scene, x, y, width, height, speed) {
-    Phaser.Physics.Arcade.Sprite.call(this, scene, x, y, 'ghost');
+  function Ghost (scene, x, y, ghostType) {
+    Phaser.Physics.Arcade.Sprite.call(this, scene, x, y, 'characters');
     //Phaser.Physics.Arcade.Sprite.call(this, scene, 10 * 16, 15 * 16, 'ghost');
     
-    let {layer, physics} = this.scene;
+    let { layer, physics } = this.scene;
 
     physics.add.collider(this, layer, () => {
       this.changeDirection();
     });
+
+    this.ghostType = ghostType;
   },
 
   directions: {},
@@ -75,21 +77,25 @@ const Ghost = new Phaser.Class({
   moveUp () {
     this.currentDirection = 'up';
     this.body.setVelocityY(-100);
+    this.play(`${this.ghostType}-up`, true);
   },
 
   moveDown () {
     this.currentDirection = 'down';
     this.body.setVelocityY(100);
+    this.play(`${this.ghostType}-down`, true);
   },
 
   moveLeft () {
     this.currentDirection = 'left';
     this.body.setVelocityX(-100);
+    this.play(`${this.ghostType}-left`, true);
   },
 
   moveRight () {
     this.currentDirection = 'right';
     this.body.setVelocityX(100);
+    this.play(`${this.ghostType}-right`, true);
   },
 });
 

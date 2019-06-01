@@ -4,11 +4,25 @@ import Game from '../games';
 import './App.css';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      variant: "pacman"
+    };
+  }
+
+  changeGame = (variant) => {
+    this.setState({
+      variant
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <Cabinet>
-          <Game variant="pacman" />
+        <Cabinet changeGame={this.changeGame}>
+          <Game variant={this.state.variant} />
         </Cabinet>
       </div>
     );

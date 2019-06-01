@@ -10,12 +10,17 @@ class Game extends Component {
 
   componentDidMount () {
     this.game = new Phaser.Game(PacmanConfig);
+    console.log(this.game)
+  }
+
+  componentWillUnmount () {
+    this.game.destroy(true);
   }
 
   render() {
     return (
       <div className="phaserContainer" id="phaser-container" />
-    );
+    ); 
   }
 }
 

@@ -7,7 +7,6 @@ export default class BootScene extends Phaser.Scene {
 
   create () {
     const {clientHeight} = this.game.canvas;
-    
     this.add.text(120 , (clientHeight / 2 - 10), 'Press Spacebar To Start');
     this.input.manager.enabled = true;
     this.cursors = this.input.keyboard.createCursorKeys();

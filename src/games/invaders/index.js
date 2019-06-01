@@ -12,6 +12,10 @@ class Game extends Component {
     this.game = new Phaser.Game(InvadersConfig);
   }
 
+  componentWillUnmount () {
+    this.game.destroy(true);
+  }
+
   render() {
     return (
       <div className="phaserContainer" id="phaser-container" />

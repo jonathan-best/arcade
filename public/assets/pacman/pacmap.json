@@ -51,6 +51,9 @@
          "type":"tilelayer",
          "visible":true,
          "width":28,
+         "properties": {
+              "dots":156
+         },
          "x":0,
          "y":0
         }],

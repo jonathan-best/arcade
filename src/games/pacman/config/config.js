@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 import BootScene from '../scenes/bootScene';
 import GameScene from '../scenes/gameScene';
+import GameOverScene from '../scenes/gameOverScene';
+import WinningScene from '../scenes/winnerScene';
 
 export default {
   type: Phaser.AUTO,
@@ -10,7 +12,7 @@ export default {
   physics: {
     default: 'arcade',
   },
-  scene: [BootScene, GameScene],
+  scene: [BootScene, GameScene, GameOverScene, WinningScene],
   extend: {
     player: null,
     cursors: null,
